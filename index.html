@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<style>
+#myDiv {
+	display:flex;
+ 	justify-content="center";
+  position: relative;
+  width: 400px;
+  height: 400px;
+  border: 10px solid black;
+}
+
+#myButton {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+</style>
+</head>
+<body>
+
+<div id="myDiv">
+  <button id="myButton" onclick="moveButton()">Click for a surprise UwU </button>
+</div>
+
+</body>
+
+<script>
+function moveButton() {
+  var button = document.getElementById("myButton");
+  var div = document.getElementById("myDiv");
+  
+  var newTop = Math.random() * (div.clientHeight - button.clientHeight);
+  var newLeft = Math.random() * (div.clientWidth - button.clientWidth);
+  
+  button.style.top = newTop + "px";
+  button.style.left = newLeft + "px";
+}
+</script>
+</html>
